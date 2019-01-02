@@ -1,6 +1,5 @@
-
 import { NativeModules } from 'react-native';
 
 const { RNWriteExifGps } = NativeModules;
 
-export default RNWriteExifGps;
+export const writeExifGps = RNWriteExifGps.writeExifGps;
