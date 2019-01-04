@@ -4,7 +4,6 @@ import com.coremedia.iso.IsoFile;
 import com.coremedia.iso.boxes.*;
 import com.coremedia.iso.boxes.apple.AppleItemListBox;
 import com.googlecode.mp4parser.boxes.apple.AppleGPSCoordinatesBox;
-import com.googlecode.mp4parser.boxes.apple.AppleNameBox;
 import com.googlecode.mp4parser.util.Path;
 
 import java.io.*;
@@ -107,15 +106,6 @@ public class Mp4MetadataWriter {
         }
 
         // Got Apple List Box
-
-        AppleNameBox nam;
-        if ((nam = Path.getPath(ilst, AppleNameBox.TYPE)) == null) {
-            nam = new AppleNameBox();
-        }
-        nam.setDataCountry(0);
-        nam.setDataLanguage(0);
-        nam.setValue("NavarychRV");
-        ilst.addBox(nam);
 
         AppleGPSCoordinatesBox gps;
         if ((gps = Path.getPath(ilst, AppleGPSCoordinatesBox.TYPE)) == null) {
